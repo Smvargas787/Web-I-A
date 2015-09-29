@@ -10,9 +10,32 @@
 		<script>
 			window.onload = function() {
 				var theCanvas = document.getElementById('Canvas1');
-				if (theCanvas && theCanvas.getContext) {
+				if (theCanvas) {
 					var ctx = theCanvas.getContext("2d");
 					if (ctx) {
+
+						ctx.strokeStyle = "blue";
+						ctx.fillStyle = "red";
+						ctx.lineWidth = 5;
+
+						//stroke a quarter arc
+						ctx.beginPath();
+						//arc will have arc(x axis,y axis,radius,startAngle,endAngle,clockwise)
+						ctx.arc(50, 150, 100, 1.5*Math.PI, 2*Math.PI);
+						ctx.stroke();
+
+						//three quarter arc
+						ctx.beginPath();
+						ctx.arc(300, 150, 100, 0, 1.5*Math.PI, false);
+						ctx.stroke();
+
+						//stroke and fill a circle
+						var degrees = 360;
+						var radians = (Math.PI / 180) * degrees;
+						ctx.beginPath();
+						ctx.arc(550, 150, 100, 0, radians);
+						ctx.fill();
+						ctx.stroke();
 					}
 				}
 			}
