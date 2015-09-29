@@ -11,9 +11,17 @@
 			window.onload = function() {
 				// draw lines of varying widths
 				var theCanvas = document.getElementById('Canvas1');
-				if (theCanvas && theCanvas.getContext) {
+				if (theCanvas) {
 					var ctx = theCanvas.getContext("2d");
 					if (ctx) {
+
+						for(var i=0; i < 10; i++){
+							ctx.beginPath(); //starts a line.
+							ctx.lineWidth= i+1;
+							ctx.moveTo(25,25+i*15);
+							ctx.lineTo(475,25+i*15);
+							ctx.stroke();
+						}
 					}
 				}
 			}
