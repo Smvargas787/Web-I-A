@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+	
+	<head>
+		
+		<title>HTML5 Audio Example</title>
+
+		
+	</head>
+
+	<body>		
+    
+   		<audio src="audio/music.mp3" controls>
+			Audio is not supported.
+		</audio>
+
+		<audio id="audio" controls autoplay>
+			<source src="audio/music.mp3" type="video/mpeg"/>
+			<source src="audio/music.ogg" type="audio/ogg"/>
+			Audio is not supported.
+		</audio>
+		<br>
+
+		<!--Add button - This will skip ahead 2 seconds-->
+
+		<button onclick="clicked()">Skip 2 Seconds</button>
+
+
+		<script type="text/javascript" src="js/audioControl.js"></script>
+
+	</body>
+
+</html>
+
+
