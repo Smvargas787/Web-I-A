@@ -41,7 +41,7 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h1>Jquery Coverflow</h1>
+					<h1>Jquery CoverFlow</h1>
 					<h3>Web Interaction & Animation</h3>
 					<p>
 						<small>Created by <strong>Selena Vargas</strong></small>
@@ -51,7 +51,7 @@
 				<section>
 					<h2>How You Doing?!</h2>
 					<p>
-						Jquery Coverflow allows you to navigate through a set of images
+						Jquery CoverFlow allows you to navigate through a set of images
 						layed out side by side as if the images gather a 3D effect right out at you.
 					</p>
 				</section>
@@ -59,80 +59,130 @@
 				<!-- Example of nested vertical slides -->
 				<section>
 					<section>
-						<h2>Vertical Slides</h2>
-						<p>Slides can be nested inside of each other.</p>
-						<p>Use the <em>Space</em> key to navigate through all slides.</p>
+						<h2>CoverFlow Examples</h2>
+						<p>Jquery coverflow is actually used pretty frequently among multiple kinds of websites/applications.</p>
+						<p>Example 1: Itunes Cover Art</p>
 						<br>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
+						<a href="http://codepen.io/hjortureh/pen/pGlki" class="navigate-down">
+							<img width="478" height="238" src="images/itunes.png" alt="Itunes Cover Art">
 						</a>
 					</section>
 					<section>
-						<h2>Basement Level 1</h2>
-						<p>Nested slides are useful for adding additional detail underneath a high level horizontal slide.</p>
+						<h2>CoveFflow Examples</h2>
+						<p>Example 2: Flipster Digital Magazine</p>
+						<br>
+						<a href="https://flipster.ebsco.com" class="navigate-down">
+							<img width="478" height="438" src="images/flipster.png" alt="Flipster">
+						</a>
 					</section>
 					<section>
-						<h2>Basement Level 2</h2>
-						<p>That's it, time to go back up.</p>
+						<h2>CoverFlow Examples</h2>
+						<p>Example 3: Spotify</p>
 						<br>
-						<a href="#/2">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="transform: rotate(180deg); -webkit-transform: rotate(180deg);">
+						<a href="https://www.spotify.com/us/">
+							<img width="478" height="438" src="images/spotify.png" alt="Up arrow" style="">
 						</a>
 					</section>
 				</section>
 
 				<section>
-					<h2>Slides</h2>
+					<h2>History Of CoverFlow</h2>
 					<p>
-						Not a coder? Not a problem. There's a fully-featured visual editor for authoring these, try it out at <a href="http://slides.com" target="_blank">http://slides.com</a>.
+						Conceived by: Andrew Coulter Enright.
+						<br>
+						Implented by: Indepedent Mac Developer Jonathan Del Strother in 2005.
+						<br>
+						Background: In 2006 Apple purchased the complete rights to CoverFlow. Apple then
+						began to immediately use coverflow in their new OSX apps and itunes 7.0.
 					</p>
 				</section>
 
 				<section>
-					<h2>Point of View</h2>
+					<h2>Timeline:</h2>
 					<p>
-						Press <strong>ESC</strong> to enter the slide overview.
+						PHP + GD/ImageMagick (2006-2008)
 					</p>
+					<a href="http://addyosmani.com/blog/jqueryuicoverflow/">
+						<img width="378" height="238" src="images/php1.png" alt="Up arrow" style="">
+					</a>
 					<p>
-						Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
+						The earliest attempts of implementing CoverFlow came greatly from
+						server side image processing. The artwork would be stored on a server and read through
+						PHP script. Which equals the image being processed and pushed back to the browser.
+						<!--Disadvantages: CF is animation focused so without certain elegance it cannot be implemented-->
+						<!--the same.-->
 					</p>
+
 				</section>
 
 				<section>
-					<h2>Touch Optimized</h2>
+					<h2>Timeline:</h2>
 					<p>
-						Presentations look great on touch devices, like mobile phones and tablets. Simply swipe through your slides.
+						Flash (2007)
+					</p>
+					<a href="http://addyosmani.com/blog/jqueryuicoverflow/">
+						<img width="378" height="238" src="images/flash.png" alt="Up arrow" style="">
+					</a>
+					<p>
+						Disadvantages towards using PHP, it had limitations. Developers realzied that and turned to
+						Adobe's Flash to implement the CF effect instead. Flash at the time was perfect for a
+						decent framework use. However a non-plugin approach was more beneficial and desirable.
 					</p>
 				</section>
 
 				<section data-markdown>
 					<script type="text/template">
-						## Markdown support
+						## Timeline:
 
-						Write content using inline or external Markdown.
-						Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
+						<p>
+							JavaScript + Canvas (2007-2010)
+						</p>
+						<a href="http://addyosmani.com/blog/jqueryuicoverflow/">
+							<img width="378" height="238" src="images/java.png" alt="Up arrow" style="">
+						</a>
+						<p>
+							Canvas was an ideal element to use for CoverFlow since it had all the drawing
+							capabilities you'd acquire in flash and even being able to view it in the browser without
+							a plugin was greatly beneficial. The only disadvantage about canvas is that it's not as
+							fast or snappy as using CSS.
+						</p>
 
-						```
-						<section data-markdown>
-						  ## Markdown support
+						<!--Write content using inline or external Markdown.-->
+						<!--Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).-->
 
-						  Write content using inline or external Markdown.
-						  Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-						</section>
-						```
+						<!--```-->
+						<!--<section data-markdown>-->
+						  <!--## Markdown support-->
+
+						  <!--Write content using inline or external Markdown.-->
+						  <!--Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).-->
+						<!--</section>-->
+						<!--```-->
 					</script>
 				</section>
 
 				<section>
 					<section id="fragments">
-						<h2>Fragments</h2>
-						<p>Hit the next arrow...</p>
-						<p class="fragment">... to step through ...</p>
-						<p><span class="fragment">... a</span> <span class="fragment">fragmented</span> <span class="fragment">slide.</span></p>
+						<h2>Timeline:</h2>
+						<p>
+							Jquery CSS3 CoverFlow (2008-2010)
+						</p>
+						<a href="http://addyosmani.com/blog/jqueryuicoverflow/">
+							<img width="378" height="238" src="images/jquery.png" alt="Up arrow" style="">
+						</a>
+						<p>
+							Advantage for CF is that CSS supports multiple numbers of
+							transformations. Using Jquery makes it possible to transform parameters required to make each cover art
+							to the CF with a straight-forward effect allowing the user to skip to the next or previous cover with ease.
+						</p>
+						<!--<h2>Jquery CSS3 CoverFlow (2008-2010)</h2>-->
+						<!--<p>Hit the next arrow...</p>-->
+						<!--<p class="fragment">... to step through ...</p>-->
+						<!--<p><span class="fragment">... a</span> <span class="fragment">fragmented</span> <span class="fragment">slide.</span></p>-->
 
-						<aside class="notes">
-							This slide has fragments which are also stepped through in the notes window.
-						</aside>
+						<!--<aside class="notes">-->
+							<!--This slide has fragments which are also stepped through in the notes window.-->
+						<!--</aside>-->
 					</section>
 					<section>
 						<h2>Fragment Styles</h2>
