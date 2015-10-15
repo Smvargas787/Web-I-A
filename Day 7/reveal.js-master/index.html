@@ -185,16 +185,35 @@
 						<!--</aside>-->
 					</section>
 					<section>
-						<h2>Fragment Styles</h2>
-						<p>There's different types of fragments, like:</p>
-						<p class="fragment grow">grow</p>
-						<p class="fragment shrink">shrink</p>
-						<p class="fragment fade-out">fade-out</p>
-						<p class="fragment current-visible">current-visible</p>
-						<p class="fragment highlight-red">highlight-red</p>
-						<p class="fragment highlight-blue">highlight-blue</p>
+						<h2>Personal Example</h2>
+					<pre><code class="hljs" data-trim contenteditable>
+						/**
+						* Flow to the right
+						**/
+						function flowRight() {
+
+						// check if has albums
+						// on the right side
+						if( _index ) {
+						_index--;
+						render();
+						}
+
+						};
+
+						* Enable left & right keyboard events
+						**/
+						function keyDown( event ) {
+
+						switch( event.keyCode ) {
+						case 37: flowRight(); break; // left
+						case 39: flowLeft(); break; // right
+						}
+
+						};
+					</code></pre>
+						<p>View outcome of <a href="http://localhost:63342/Web%20I%20&%20A/Day%207/Personal%20Ex.%20Coverflow/jswheel-master/demo/index.html">personal example.</a></p>
 					</section>
-				</section>
 
 				<section id="transitions">
 					<h2>Transition Styles</h2>

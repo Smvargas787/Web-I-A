@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Personal Example CoverFlow</title>
+
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenLite.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/CSSPlugin.min.js"></script>
+	<script type="text/javascript" src="../jswheel.js"></script>
+	<link rel="stylesheet" href="css/coverflow.css">
+
+</head>
+<body>
+
+
+<div id="container"></div>
+
+<h1>Top Albums</h1>
+<p>Watch it go round and round!</p>
+
+
+<!-- icon source for demo -->
+<!-- http://dominicanjoker.deviantart.com/art/Comic-Book-Publishers-Folders-356238049 -->
+
+<script type="text/javascript">
+
+document.addEventListener('DOMContentLoaded', function() {
+	var wheel_data = {"elems":
+	[{"name": "Drake", "file": "icons/drake.png"},
+	 {"name": "J Cole", "file": "icons/J cole.png"},
+	 {"name": "The Weeknd", "file": "icons/theweeknd.png"},
+	 {"name": "Mack Wilds", "file": "icons/nylovestory.png"},
+	 {"name": "K Camp", "file": "icons/kcamp.png"},
+	 {"name": "Faboulous", "file": "icons/fabolous.png"},
+	 {"name": "Logic", "file": "icons/logic.png"}]};
+
+	var stopPoints = [
+		// list of points used for stops
+		// X, Y, scale, z-index, transform CSS
+		// (position auto-scaled on a basis of 1024/768)
+
+		// example NEW
+		[120, 100, 1, 3, 'translateZ(150px) rotateY(40deg)'],
+		[300, 100, 1, 2, 'translateZ(50px) rotateY(20deg)'],
+		[500, 100, 1, 1, 'translateZ(10px) rotateY(0deg)'],
+		[700, 100, 1, 2, 'translateZ(50px) rotateY(-20deg)'],
+		[880, 100, 1, 3, 'translateZ(150px) rotateY(-40deg)'],
+	];
+
+	spinner = new jswheel(
+		wheel_data.elems, 						// wheel item list {elems: [{name: name, file: image.png}, ...]}
+		stopPoints, 									// points used for element positions
+		{'containerId': 'container', 	// wheel container ID
+		 'transitionTime': 270, 			// in ms
+		 'minTransitionTime': 100, 		// in ms, when key kept pressed
+		 'selectPosition': 2, 				// active element position for selection
+		 'hide': false,								// If this is true, hide wheel after a certain amount of time
+		 'hideStart': 5000,						// in ms, time after which starts hiding wheel
+		 'hideDuration': 1000,				// in ms, time for wheel to be completely hidden
+		 'containerStyle': {					// custom css for the container
+		   perspective: '1000px',
+		 },
+		 'startElem': 'marvel'} 			// index of item which serves as cursor
+	);
+
+	// we override the scaler function (for element position)
+	// if no override, default function uses percentages for positions
+	// 'type' parameter is an string telling what we are getting (can be 'x', 'y', 'scale')
+	spinner.scaler = function(value, type) {
+		return (value);
+	};
+
+	// re-render
+	spinner.update();
+
+	window.addEventListener('keydown', function (e) {
+		// right
+		if (e.keyCode == 39) {
+			spinner.move('next');
+			e.preventDefault();
+
+		// left
+		} else if (e.keyCode == 37) {
+			spinner.move('prev');
+			e.preventDefault();
+
+		// space moves to next letter
+		} else if (e.keyCode == 32) {
+			spinner.moveToLetter('next');
+			e.preventDefault();
+
+		// enter selects an item
+		} else if (e.keyCode == 13) {
+			alert(spinner.select().name);
+			e.preventDefault();
+		}
+	});
+
+});
+
+</script>
+</body>
+</html>
